@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="title: testdate: 2017-01-07 22:55:54updated:categories:permalink:tags: test">
+<meta name="description" content="更换软件源：Settings - Software&amp;amp;Updates - Download from中选择一个国内的源，然后按照提示更新  由于安装的是Windows和Ubuntu双系统，两个系统的时间不对，相差八小时，首先要调整系统时间，在Ubuntu16.10下进行。解决办法是输入命令：timedatectl set-local-rtc true  将启动器移动到屏幕下方。gsetti">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="UBUNTU安装之后做的事情">
 <meta property="og:url" content="http://yoursite.com/2018/06/13/test/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title: testdate: 2017-01-07 22:55:54updated:categories:permalink:tags: test">
+<meta property="og:description" content="更换软件源：Settings - Software&amp;amp;Updates - Download from中选择一个国内的源，然后按照提示更新  由于安装的是Windows和Ubuntu双系统，两个系统的时间不对，相差八小时，首先要调整系统时间，在Ubuntu16.10下进行。解决办法是输入命令：timedatectl set-local-rtc true  将启动器移动到屏幕下方。gsetti">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T02:31:20.939Z">
+<meta property="og:updated_time" content="2018-06-13T06:20:40.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title: testdate: 2017-01-07 22:55:54updated:categories:permalink:tags: test">
+<meta name="twitter:title" content="UBUNTU安装之后做的事情">
+<meta name="twitter:description" content="更换软件源：Settings - Software&amp;amp;Updates - Download from中选择一个国内的源，然后按照提示更新  由于安装的是Windows和Ubuntu双系统，两个系统的时间不对，相差八小时，首先要调整系统时间，在Ubuntu16.10下进行。解决办法是输入命令：timedatectl set-local-rtc true  将启动器移动到屏幕下方。gsetti">
 
 
 
@@ -125,7 +125,7 @@
 
 
 
-  <title> | Hexo</title>
+  <title>UBUNTU安装之后做的事情 | Hexo</title>
   
 
 
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">UBUNTU安装之后做的事情</h1>
         
 
         <div class="post-meta">
@@ -261,7 +261,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-13T10:31:20+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-13T10:31:00+08:00">
                 2018-06-13
               </time>
             
@@ -299,7 +299,32 @@
       
 
       
-        <p>title: test<br>date: 2017-01-07 22:55:54<br>updated:<br>categories:<br>permalink:<br>tags: test </p>
+        <ol start="0">
+<li><p>更换软件源：Settings - Software&amp;Updates - Download from中选择一个国内的源，然后按照提示更新</p>
+</li>
+<li><p>由于安装的是Windows和Ubuntu双系统，两个系统的时间不对，相差八小时，首先要调整系统时间，在Ubuntu16.10下进行。<br>解决办法是输入命令：timedatectl set-local-rtc true</p>
+</li>
+<li><p>将启动器移动到屏幕下方。gsettings set com.canonical.Unity.Launcher launcher-position Bottom<br>（Bottom改为Left可重新移动到左侧，输入Right无效）</p>
+</li>
+<li><p>调整启动器图标大小。系统设置——外观，底部可看见“启动器图标大小”选项，默认是48，调整到30</p>
+</li>
+<li><p>安装Chrome浏览器。<a href="http://www.cnblogs.com/deitymon/p/5926450.html" target="_blank" rel="noopener">http://www.cnblogs.com/deitymon/p/5926450.html</a></p>
+</li>
+<li><p>卸载LibreOffice。sudo apt-get purge libreoffice* ，sudo apt-get autoremove</p>
+</li>
+<li><p>安装WPS for Linux。下载地址：<a href="http://community.wps.cn/download/。选择alpha版deb包。" target="_blank" rel="noopener">http://community.wps.cn/download/。选择alpha版deb包。</a><br>Linux 64 bit需要通过安装32 bit的库来获得支持。<br>#sudo apt-get install ia32-libs<br>但是输入命令后系统提示ia32-libs软件包缺失，需要用lib32ncurses5和lib32z1代替。于是运行<br>#sudo apt-get install lib32ncurses5<br>#sudo apt-get install lib32z1。<br>再dpkg安装程序安装包<br>#sudo dpkg -i wps-office_10.1.0.5672~a21_amd64.deb<br>提示wps-office 依赖于 libpng12-0；然而：未安装软件包 libpng12-0。该软件包已丢失可用ttf-mscorefonts-installer代替。<br>要先运行下面的命令将已安装的wps-office卸载：<br>#apt-get -f install<br>然后安装依赖关系：<br>#sudp apt-get install ttf-mscorefonts-installer<br>之后libpng12-0依赖关系还是出错，到下面的地址下载libpng12-0然后安装：<br><a href="https://packages.debian.org/zh-cn/wheezy/amd64/libpng12-0/download。" target="_blank" rel="noopener">https://packages.debian.org/zh-cn/wheezy/amd64/libpng12-0/download。</a><br>#sudo dpkg -i libpng12-0_1.2.49-1+deb7u2_amd64.deb<br>安装好后到Dash中搜索WPS启动并锁定到启动器，会报错显示缺失字体：<br>Symbol，Wingdings，Wingdings2，Wingdings3，MT-Extra<br>进入home文件夹，按Ctrl+h显示所有文件夹，查看有没有.fonts文件夹，如果没有就创建一个，然后到网上下载相关字体放入该文件夹中</p>
+</li>
+<li><p>安装vim编辑器。sudo apt-get install vim</p>
+</li>
+<li><p>安装unrar。sudo apt-get install rar unrar</p>
+</li>
+<li><p>删除Amazon的链接：sudo apt-get remove unity-webapps-common</p>
+</li>
+<li><p>安装Git：sudo apt-get install git</p>
+</li>
+<li><p>主题美化，安装Unity Tweak Tool：到Ubuntu软件中心搜索Unity Tweak Tool并安装</p>
+</li>
+</ol>
 
       
     </div>
